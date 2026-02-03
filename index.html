@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileBright Dental Clinic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">SmileBright Dental</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#booking" class="text-gray-700 hover:text-blue-600">Book Appointment</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#hero" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="#booking" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Book Appointment</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-gradient-to-r from-blue-500 to-teal-500 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Your Smile, Our Priority</h1>
+            <p class="text-lg md:text-xl mb-8">Experience top-notch dental care with our expert team. Book your appointment today!</p>
+            <a href="#booking" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <i class="fas fa-tooth text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">General Dentistry</h3>
+                    <p class="text-gray-600">Comprehensive check-ups, cleanings, and preventive care.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <i class="fas fa-teeth text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Cosmetic Dentistry</h3>
+                    <p class="text-gray-600">Teeth whitening, veneers, and smile makeovers.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <i class="fas fa-syringe text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Orthodontics</h3>
+                    <p class="text-gray-600">Braces, aligners, and bite correction treatments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Book Your Appointment</h2>
+            <form id="appointment-form" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <div class="mb-4">
+                    <label for="date" class="block text-gray-700 font-semibold mb-2">Preferred Date</label>
+                    <input type="date" id="date" name="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <div class="mb-4">
+                    <label for="time" class="block text-gray-700 font-semibold mb-2">Preferred Time</label>
+                    <select id="time" name="time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                        <option value="">Select Time</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 SmileBright Dental Clinic. All rights reserved.</p>
+            <p class="mt-2">Contact us: info@smilebrightdental.com | (123) 456-7890</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Form validation and submission
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            
+            // Basic validation
+            if (!name || !email || !phone || !date || !time) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Date validation (not in the past)
+            const today = new Date().toISOString().split('T')[0];
+            if (date < today) {
+                alert('Please select a date in the future.');
+                return;
+            }
+            
+            // Simulate successful booking
+            alert('Appointment booked successfully! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
